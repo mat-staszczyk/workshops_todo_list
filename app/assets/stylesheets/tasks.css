@@ -107,6 +107,14 @@ ul li{
   font-style: italic;
   font-size: 90%;
   padding-top: 20px;
+  padding-right: 5px;
+  color: grey;
+}
+
+.deadline {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 90%;
   color: grey;
 }
 

@@ -10,8 +10,18 @@
       <div class='list'>
         <table>
           <tbody>
-            <tr><td><%= task.title %></td><td rowspan='2' class='right-link'><%= link_to 'Remove/Done', task, method: :delete, data: { confirm: 'Sure that you dont have to do this task?' } %></td></tr>
-            <tr><td class='description'><%= task.description %></td></tr>
+            <tr>
+              <td><%= task.title %></td>
+              <% if task.deadline %>
+                <td class="deadline">
+                  ends on <%= task.deadline&.strftime("%m/%d/%Y") %>
+                </td>
+              <% end %>
+            </tr>
+            <tr><td class='description'><%= task.description %></td>
+              <td class='right-link'>
+                <%= link_to 'Remove/Done', task, method: :delete, data: { confirm: 'Sure that you dont have to do this task?' } %></td>
+            </tr>
           </tbody>
         </table>
       </div>
