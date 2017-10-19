@@ -12,15 +12,17 @@
           <tbody>
             <tr>
               <td><%= task.title %></td>
-              <% if task.deadline %>
-                <td class="deadline">
-                  ends on <%= task.deadline&.strftime("%m/%d/%Y") %>
-                </td>
-              <% end %>
+              <td class="deadline">
+                <%= "ends on #{task.deadline.strftime('%m/%d/%Y')}" if task.deadline %>
+              </td>
             </tr>
-            <tr><td class='description'><%= task.description %></td>
+            <tr>
+              <td class='description'>
+                <%= task.description %>
+              </td>
               <td class='right-link'>
-                <%= link_to 'Remove/Done', task, method: :delete, data: { confirm: 'Sure that you dont have to do this task?' } %></td>
+                <%= link_to 'Remove/Done', task, method: :delete, data: { confirm: 'Sure that you dont have to do this task?' } %>
+              </td>
             </tr>
           </tbody>
         </table>
